@@ -49,8 +49,8 @@ export default {
   },
   methods: {
     updatedCalendar(newDate) {
-        console.log("DatePicker::UpdatedCalendar val recieved::" + newDate);
-        this.$emit("pickedDate", newDate)
+        console.log("DatePicker::UpdatedCalendar val received::" + newDate);
+        this.$emit("pickedDate", newDate);
     },
     updatedSlider(newTime) {
         console.log("DatePicker::updatedSlider new val: " + newTime.label );

@@ -24,20 +24,15 @@ export default {
     }
   },
   mounted() {
-      var i = 1;
-      var f = () => {
-          this.data_oggi.push(i);
-          i = i+1;
-          setTimeout(f, 3000);
-      };
-      f();
   },
   methods: {
     updatedDatePicker(newDate) {
-      console.log("App value recieved date: " + newDate);
+      console.log("App value received date: " + newDate);
+          this.data_oggi.push( {"newDateEvent": newDate} );
     },
     updatedTimePicker(newTime) {
-      console.log("App value recieved time: " + newTime);
+      console.log("App value received time: " + newTime);
+          this.data_oggi.push( {"newTimeEvent": newTime} );
     },
   },
 }

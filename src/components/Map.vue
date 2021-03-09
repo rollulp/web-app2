@@ -1,7 +1,7 @@
 <template>
     <div>
+        <br/><br/><br/><br/><br/><br/><br/>
         <p>ciao {{data}} </p>
-        <p v-for="d in data" :key="d"> {{d}}</p>
 
     </div>
 </template>
