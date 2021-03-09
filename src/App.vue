@@ -8,6 +8,9 @@
 <script>
 import Map from "./components/Map";
 import DateTimePicker from "./components/DateTimePicker";
+
+import './assets/sytle/app.css';
+
 export default {
   name: 'App',
   components: {

@@ -1,13 +1,15 @@
 <template>
     <div>
-        <datetime format="YYYY/MM/DD" width="300px" @input="updatedCalendar" firstDayOfWeek="1" />
+        <div id="calendar">
+            <datetime format="YYYY/MM/DD" width="300px" @input="updatedCalendar" firstDayOfWeek="1" />
+        </div>
         <div id="slidebar">
             <VueSlideBar
                 v-model="slider.value"
                 :data="slider.data"
                 :range="slider.range"
                 :labelStyles="{ color: '#003300', backgroundColor: '#003300' }"
-                :processStyle="{ backgroundColor: 'green' }"
+                :processStyle="{ backgroundColor: '#ed4d00' }"
                 @callbackRange="updatedSlider"
             />
         </div>
@@ -15,8 +17,11 @@
 </template>
 
 <script>
-import datetime from 'vuejs-datetimepicker';
+import datetime from './DateTimePicker/datetime-picker.vue';
 import VueSlideBar from 'vue-slide-bar';
+
+import '../assets/sytle/components/DateTimePicker.css';
+
 export default {
   name: 'DateTimePicker',
   components: {
