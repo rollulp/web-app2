@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Map :data="data_oggi" />
+    <DateTimePicker @pickedDate="updatedDatePicker" @pickedTime="updatedTimePicker"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Map from "./components/Map";
+import DateTimePicker from "./components/DateTimePicker";
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Map,
+    DateTimePicker
+  },
+  data() {
+    return {
+      data_di_oggi: new Date(),
+      data_oggi: [],
+    }
+  },
+  mounted() {
+      var i = 1;
+      var f = () => {
+          this.data_oggi.push(i);
+          i = i+1;
+          setTimeout(f, 3000);
+      };
+      f();
+  },
+  methods: {
+    updatedDatePicker(newDate) {
+      console.log("App value recieved date: " + newDate);
+    },
+    updatedTimePicker(newTime) {
+      console.log("App value recieved time: " + newTime);
+    },
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
