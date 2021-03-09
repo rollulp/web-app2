@@ -35,7 +35,7 @@ export default {
     },
     updatedTimePicker(newTime) {
       console.log("App value recieved time: " + newTime);
-    }
+    },
   },
 }
 </script>
